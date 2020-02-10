@@ -1,0 +1,42 @@
+<?php //%255BApp%255CEntity%255CUser%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+        clone ($p['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'collectionOperations' => [
+                [
+                    'get',
+                    'post' => [
+                        'acces_control' => 'is_granted(\'POST_EDIT\')',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                [
+                    'get',
+                    'put' => [
+                        'acces_control' => 'is_granted(\'POST_EDIT\', object) or object.owner == user',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                [
+                    'acces_control' => 'is_granted(\'POST_EDIT\')',
+                ],
+            ],
+            'repositoryClass' => [
+                1 => 'App\\Repository\\UserRepository',
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+); }];
